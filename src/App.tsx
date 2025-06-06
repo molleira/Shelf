@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import { PhotoGrid } from './components/photo-grid'
-import { photos } from './mocks'
-import type { Photo } from './types'
-import { PhotoDetail } from './components/photo-detail'
+import { Bookmarks } from './components/bookmark'
 import { PasswordPrompt } from './components/password-prompt'
+import { PhotoDetail } from './components/photo-detail'
+import { PhotoGrid } from './components/photo-grid'
+import type { Photo } from './types'
+import { photos } from './mocks'
 import './css/app.css'
 
 function App() {
@@ -94,7 +95,7 @@ function App() {
       case "photos":
         return <PhotoGrid photos={visiblePhotos} onPhotoClick={handlePhotoClick} columns={columnsCount} />
       case "bookmarks":
-        // return <Bookmarks />
+        return <Bookmarks />
         return null
       case "feeds":
         // return <Feeds />
@@ -104,7 +105,7 @@ function App() {
     }
   }
 
-  console.log(isDarkMode)
+  // console.log(isDarkMode)
 
   return (
     <div className={`app ${isDarkMode ? "dark-mode" : ""}`}>

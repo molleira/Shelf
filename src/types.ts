@@ -7,3 +7,10 @@ export interface Photo {
   description: string
   protected?: boolean
 }
+
+export interface Bookmark {
+  title: string
+  url: string
+  description?: string
+  category?: string
+}
