@@ -1,0 +1,159 @@
+.bookmarks-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.loading,
+.error,
+.empty {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  padding: 2rem;
+}
+
+.app.dark-mode .loading,
+.app.dark-mode .error,
+.app.dark-mode .empty,
+body.dark-mode .loading,
+body.dark-mode .error,
+body.dark-mode .empty {
+  color: #a0a0a0;
+}
+
+.error {
+  color: #d73a49;
+}
+
+.app.dark-mode .error,
+body.dark-mode .error {
+  color: #f85149;
+}
+
+.error-hint,
+.empty-hint,
+.debug-info {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  opacity: 0.7;
+}
+
+.debug-info {
+  color: #0366d6;
+  margin: 1rem 0;
+}
+
+.app.dark-mode .debug-info,
+body.dark-mode .debug-info {
+  color: #58a6ff;
+}
+
+.format-example {
+  text-align: left;
+  background: #f6f8fa;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin: 0.5rem auto;
+  display: inline-block;
+  font-family: monospace;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.app.dark-mode .format-example,
+body.dark-mode .format-example {
+  background: #2a2a2a;
+}
+
+.bookmark-category {
+  margin-bottom: 2rem;
+}
+
+.category-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.8rem;
+}
+
+.app.dark-mode .category-title,
+body.dark-mode .category-title {
+  color: #e0e0e0;
+}
+
+.bookmarks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.bookmark-item {
+  display: block;
+  padding: 1rem;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  background: #fff;
+}
+
+.app.dark-mode .bookmark-item,
+body.dark-mode .bookmark-item {
+  border-color: #333;
+  background: #1e1e1e;
+}
+
+.bookmark-item:hover {
+  border-color: #ccc;
+  transform: translateY(-1px);
+}
+
+.app.dark-mode .bookmark-item:hover,
+body.dark-mode .bookmark-item:hover {
+  border-color: #555;
+}
+
+.bookmark-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.app.dark-mode .bookmark-title,
+body.dark-mode .bookmark-title {
+  color: #e0e0e0;
+}
+
+.bookmark-description {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.app.dark-mode .bookmark-description,
+body.dark-mode .bookmark-description {
+  color: #a0a0a0;
+}
+
+.bookmark-url {
+  font-size: 0.75rem;
+  color: #999;
+  text-transform: lowercase;
+}
+
+.app.dark-mode .bookmark-url,
+body.dark-mode .bookmark-url {
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .bookmarks-grid {
+    grid-template-columns: 1fr;
+  }
+}
