@@ -1,0 +1,8 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.validate": ["javascript", "javascriptreact", "typescript"],
+  "stylelint.validate": ["css", "scss", "less"],
+
+  // (Optional) also turn off stylelint auto-fix if not needed
+  "stylelint.autoFixOnSave": false}
