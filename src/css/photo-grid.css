@@ -28,6 +28,14 @@
   filter: brightness(1.05);
 }
 
+.photo-item.protected img {
+  filter: blur(8px) grayscale(0.7);
+  opacity: 0.7;
+}
+.photo-item.protected .overlay {
+  /* add a lock icon or message */
+}
+
 @media (max-width: 768px) {
   .photo-grid {
     grid-template-columns: repeat(2, 1fr) !important;

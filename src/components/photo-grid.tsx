@@ -6,9 +6,10 @@ interface PhotoGridProps {
   photos: Photo[]
   onPhotoClick: (photo: Photo) => void
   columns: number
+  isAuthenticated: boolean;
 }
 
-export const PhotoGrid = ({ photos, onPhotoClick, columns }: PhotoGridProps) => {
+export const PhotoGrid = ({ photos, onPhotoClick, columns, isAuthenticated }: PhotoGridProps) => {
   const gridRef = useRef<HTMLDivElement>(null)
 
   // Implement lazy loading for images
@@ -45,7 +46,7 @@ export const PhotoGrid = ({ photos, onPhotoClick, columns }: PhotoGridProps) => 
         gridTemplateColumns: `repeat(${columns}, 1fr)`,
       }}
     >
-      {photos.map((photo) => (
+      {/* {photos.map((photo) => (
         <div
           key={photo.id}
           className="photo-item"
@@ -60,6 +61,43 @@ export const PhotoGrid = ({ photos, onPhotoClick, columns }: PhotoGridProps) => 
           }}
         >
           <img data-src={photo.src || "/placeholder.svg"} src="/placeholder.svg?height=100&width=100" alt={photo.alt} />
+        </div>
+      ))} */}
+
+      {/* {photos.map(photo => (
+        <div
+          key={photo.id}
+          className={`photo${photo.protected && !isAuthenticated ? " protected" : ""}`}
+          onClick={() => onPhotoClick(photo)}
+        >
+          <img src={photo.src} alt={photo.alt} />
+          {photo.protected && !isAuthenticated && <div className="overlay">🔒</div>}
+        </div>
+      ))
+      } */}
+
+      {photos.map(photo => (
+        <div
+          key={photo.id}
+          className={`photo-item${photo.protected && !isAuthenticated ? " protected" : ""}`}
+          onClick={() => onPhotoClick(photo)}
+          role="button"
+          tabIndex={0}
+          aria-label={photo.protected && !isAuthenticated ? "Protected photo" : photo.alt}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              onPhotoClick(photo)
+            }
+          }}
+          style={{ position: "relative", width: "100%", height: "100%" }}
+        >
+          <img src={photo.src} alt={photo.alt} style={{ width: "100%", height: "auto", display: "block" }} />
+          {photo.protected && !isAuthenticated && (
+            <div className="overlay">
+              <span role="img" aria-label="locked">🔒</span>
+              <span className="overlay-text">Protected</span>
+            </div>
+          )}
         </div>
       ))}
     </div>
