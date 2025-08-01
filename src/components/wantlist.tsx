@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
-import type { WantlistRecord } from "../types"
-import "./Wantlist.css"
+import { useEffect, useState } from "react";
+import type { WantlistRecord } from "../types";
+// import "./css/wantlist.css";
 
 interface WantlistData {
   records: WantlistRecord[]

@@ -1,16 +1,19 @@
-import { useState, useEffect } from "react";
-import { PhotoGrid } from "./components/photo-grid";
-import { PhotoDetail } from "./components/photo-detail";
-import { Bookmarks } from "./components/bookmark";
-// import { Feeds } from "./components/feeds";
-import { Wantlist } from "./components/wantlist";
-// import { Chats } from "./components/chats";
-import { PasswordPrompt } from "./components/password-prompt";
-import type { Photo } from "./types";
-import "./css/app.css";
+// @ts-nocheck
+import { useState, useEffect } from "react"
+import PhotoGrid from "./components/PhotoGrid"
+import PhotoDetail from "./components/PhotoDetail"
+import Bookmarks from "./components/Bookmarks"
+import Feeds from "./components/Feeds"
+import Wantlist from "./components/Wantlist"
+import Chats from "./components/Chats"
+import PasswordPrompt from "./components/PasswordPrompt"
+// import type { Photo } from "./types"
+import "./App.css"
 
 // Fallback photos in case the fetch fails
-const fallbackPhotos: Photo[] = [
+// const fallbackPhotos: Photo[] = [
+  const fallbackPhotos = [
+
   {
     id: 1,
     src: "/placeholder.svg?height=600&width=800",
@@ -32,9 +35,11 @@ const fallbackPhotos: Photo[] = [
 ]
 
 function App() {
-  const [photos, setPhotos] = useState<Photo[]>([])
+  // const [photos, setPhotos] = useState<Photo[]>([])
+  const [photos, setPhotos] = useState([])
   const [photosLoading, setPhotosLoading] = useState(true)
   const [photosError, setPhotosError] = useState<string | null>(null)
+
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null)
   const [columnsCount, setColumnsCount] = useState<number>(3)
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false)
@@ -109,7 +114,9 @@ function App() {
     setIsDarkMode((prev) => !prev)
   }
 
-  const handlePhotoClick = (photo: Photo) => {
+  // const handlePhotoClick = (photo: Photo) => {
+    const handlePhotoClick = (photo) => {
+
     if (photo.protected && !isAuthenticated) {
       setShowPasswordPrompt(true)
       setSelectedPhoto(photo)
@@ -122,7 +129,9 @@ function App() {
     setSelectedPhoto(null)
   }
 
-  const handlePasswordSubmit = (password: string) => {
+  // const handlePasswordSubmit = (password: string) => {
+    const handlePasswordSubmit = (password) => {
+
     if (password === PASSWORD) {
       setIsAuthenticated(true)
       setShowPasswordPrompt(false)
@@ -138,7 +147,9 @@ function App() {
 
   // Handle keyboard navigation
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+    // const handleKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = (e) => {
+
       if (selectedPhoto) {
         if (e.key === "Escape") {
           closeDetail()
@@ -177,12 +188,12 @@ function App() {
     switch (currentView) {
       case "bookmarks":
         return <Bookmarks />
-      // case "feeds":
-      //   return <Feeds />
+      case "feeds":
+        return <Feeds />
       case "wantlist":
         return <Wantlist columns={columnsCount} />
-      // case "chats":
-      //   return <Chats />
+      case "chats":
+        return <Chats />
       default:
         return null
     }
