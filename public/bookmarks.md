@@ -29,6 +29,7 @@
 - [YouTube - Thomas Heaton](https://youtube.com/@ThomasHeatonPhoto) - Photography education
 - [Kelpy Camera](https://kelpycamera.com) - Camera reviews and tutorials
 - [Creative Live](https://creativelive.com) - Online creative courses
+- [Run LLMs locally](https://simonwillison.net/2025/Jul/29/space-invaders/) - How to run LLMs locally with Python XML
 
 <!-- - [VIDEO: Make a BUCHLA MUSIC EASEL in Eurorack Modules: Suggested Systems 1 | YouTube](https://www.youtube.com/watch?v=B40AizE6i2g)
 - [VIDEO: Making music with Gameboy, Nintendo DS, & Pico Tracker | Patreon](https://www.patreon.com/posts/127446147)
