@@ -11,6 +11,38 @@
   background-color: var(--bg-primary);
 }
 
+.theme-toggle {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 20px;
+  padding: 0.4rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+  background: var(--border-color);
+}
+
+.app.dark-mode .theme-toggle {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.app.dark-mode .theme-toggle:hover,
+.app.dark-mode .theme-toggle:focus {
+  background: #222;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -92,8 +124,7 @@ header {
   letter-spacing: 0.5px;
 }
 
-.columns-slider,
-.theme-slider {
+.columns-slider {
   -webkit-appearance: none;
   appearance: none;
   height: 2px;
@@ -101,23 +132,14 @@ header {
   outline: none;
   border-radius: 2px;
   margin: 0;
-}
-
-.app.dark-mode .columns-slider,
-.app.dark-mode .theme-slider {
-  background: #555;
-}
-
-.columns-slider {
   width: 120px;
 }
 
-.theme-slider {
-  width: 40px;
+.app.dark-mode .columns-slider {
+  background: #555;
 }
 
-.columns-slider::-webkit-slider-thumb,
-.theme-slider::-webkit-slider-thumb {
+.columns-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 12px;
@@ -128,14 +150,12 @@ header {
   border: 1px solid #fff;
 }
 
-.app.dark-mode .columns-slider::-webkit-slider-thumb,
-.app.dark-mode .theme-slider::-webkit-slider-thumb {
+.app.dark-mode .columns-slider::-webkit-slider-thumb {
   background: #ccc;
   border: 1px solid #121212;
 }
 
-.columns-slider::-moz-range-thumb,
-.theme-slider::-moz-range-thumb {
+.columns-slider::-moz-range-thumb {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -144,8 +164,7 @@ header {
   border: 1px solid #fff;
 }
 
-.app.dark-mode .columns-slider::-moz-range-thumb,
-.app.dark-mode .theme-slider::-moz-range-thumb {
+.app.dark-mode .columns-slider::-moz-range-thumb {
   background: #ccc;
   border: 1px solid #121212;
 }

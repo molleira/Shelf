@@ -11,26 +11,35 @@ import "./css/app.css";
 
 function App() {
   // Dark mode
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    const stored = localStorage.getItem("darkMode");
+    if (stored !== null) return stored === "true";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
 
   useEffect(() => {
-    const mode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    setIsDarkMode(mode);
-  }, []);
-
-  useEffect(() => {
+    localStorage.setItem("darkMode", String(isDarkMode));
     if (isDarkMode) {
       document.documentElement.classList.add("dark-mode");
-      document.body.classList.add("dark-mode");
     } else {
       document.documentElement.classList.remove("dark-mode");
-      document.body.classList.remove("dark-mode");
     }
   }, [isDarkMode]);
 
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+    const handler = (e: MediaQueryListEvent) => {
+      if (localStorage.getItem("darkMode") === null) {
+        setIsDarkMode(e.matches);
+      }
+    };
+    media.addEventListener("change", handler);
+    return () => media.removeEventListener("change", handler);
+  }, []);
+
   const toggleDarkMode = () => {
-    setIsDarkMode((prev) => !prev)
-  }
+    setIsDarkMode((prev) => !prev);
+  };
 
   // Columns and current view
   const [columnsCount, setColumnsCount] = useState<number>(3);
@@ -104,21 +113,6 @@ function App() {
   return (
     <div className={`app ${isDarkMode ? "dark-mode" : ""}`}>
       <header>
-        <div className="theme-controls">
-          <span className="theme-icon">Light</span>
-          <input
-            type="range"
-            min="0"
-            max="1"
-            step="1"
-            value={isDarkMode ? 1 : 0}
-            onChange={() => toggleDarkMode()}
-            className="theme-slider"
-            aria-label="Toggle dark mode"
-          />
-          <span className="theme-icon">Dark</span>
-        </div>
-
         <nav className="nav-controls">
           <button
             className={`nav-button ${currentView === "photos" ? "active" : ""}`}
@@ -168,6 +162,16 @@ function App() {
               <span className="grid-icon">+</span>
             </div>
           )}
+        </div>
+
+        <div className="theme-controls">
+          <button
+            className="theme-toggle"
+            aria-label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
+            onClick={toggleDarkMode}
+          >
+            {isDarkMode ? "🌙" : "☀️"}
+          </button>
         </div>
       </header>
 
