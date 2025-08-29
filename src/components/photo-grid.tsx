@@ -1,38 +1,24 @@
-import { useState } from "react"
 import type { Photo } from "../types"
-import { PhotoDetail } from "./photo-detail"
+import { PhotoItem } from "./photo-item"
 import '../css/photo-grid.css'
 
 interface PhotoGridProps {
   photos: Photo[]
   columns: number
+  onPhotoClick: (photo: Photo) => void;
 }
 
-export const PhotoGrid = ({ photos, columns }: PhotoGridProps) => {
-  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
-
+export const PhotoGrid = ({ photos, columns, onPhotoClick }: PhotoGridProps) => {
   return (
-    <>
-      <div
-        className="photo-grid"
-        style={{
-          gridTemplateColumns: `repeat(${columns}, 1fr)`,
-        }}
-      >
-
-        {photos.map(photo => (
-          <img
-            key={photo.id}
-            className="photo-item"
-            src={photo.src}
-            alt={photo.alt}
-            onClick={() => setSelectedPhoto(photo)}
-          />
-        ))}
-      </div>
-
-      {selectedPhoto && <PhotoDetail photo={selectedPhoto} onClose={() => setSelectedPhoto(null)} />}
-    </>
-
+    <div
+      className="photo-grid"
+      style={{
+        gridTemplateColumns: `repeat(${columns}, 1fr)`,
+      }}
+    >
+      {photos.map(photo => (
+        <PhotoItem key={photo.id} photo={photo} onPhotoClick={onPhotoClick} />
+      ))}
+    </div>
   )
 }

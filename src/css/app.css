@@ -11,37 +11,39 @@
   background-color: var(--bg-primary);
 }
 
+/* theme toggle */
 .theme-toggle {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-  border: none;
-  border-radius: 20px;
-  padding: 0.4rem 1.2rem;
-  font-size: 1rem;
-  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 1.3rem;
+  line-height: 0;
+  padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-  outline: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  transition: background 1s, color 1s;
 }
 
-.theme-toggle:hover,
+.theme-toggle svg {
+  transition: transform 0.3s ease-in-out;
+}
+
+.theme-toggle:hover svg {
+  transform: rotate(-25deg) scale(1.1);
+}
+
+/* .theme-toggle:hover,
 .theme-toggle:focus {
-  background: var(--border-color);
-}
+  background: #f5f5f5;
+  border-radius: 4px;
+} */
 
-.app.dark-mode .theme-toggle {
+/* .app.dark-mode .theme-toggle {
   background: var(--bg-secondary);
   color: var(--text-primary);
-}
+} */
 
-.app.dark-mode .theme-toggle:hover,
+/* .app.dark-mode .theme-toggle:hover,
 .app.dark-mode .theme-toggle:focus {
   background: #222;
-}
+} */
 
 header {
   display: flex;
@@ -109,7 +111,7 @@ header {
 .grid-icon,
 .theme-icon {
   font-size: 0.8rem;
-  color: #666;
+  color: var(--text-secondary);
   user-select: none;
 }
 
@@ -123,29 +125,32 @@ header {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-
+ /* slider */
 .columns-slider {
   -webkit-appearance: none;
-  appearance: none;
+  /* appearance: none; */
   height: 2px;
-  background: #ccc;
-  outline: none;
-  border-radius: 2px;
-  margin: 0;
-  width: 120px;
+  background: var(--bg-secondary);
+  /* outline: none; */
+  border-radius: 4px;
+  /* margin: 0; */
+  /* width: 120px; */
+  position: relative;
+  top: 1.5px;
 }
 
 .app.dark-mode .columns-slider {
   background: #555;
 }
 
+/* slider ball */
 .columns-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: #555;
+  background: var(--text-secondary);
   cursor: pointer;
   border: 1px solid #fff;
 }

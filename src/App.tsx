@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { FaSun, FaMoon } from "react-icons/fa";
 import { PhotoGrid } from "./components/photo-grid";
 import { Bookmarks } from "./components/bookmark";
 // import { Feeds } from "./components/feeds";
 import { Wantlist } from "./components/wantlist";
 // import { Chats } from "./components/chats";
+import { PhotoDetail } from "./components/photo-detail";
 import type { Photo } from "./types";
 import "./css/app.css";
 
@@ -43,13 +45,31 @@ function App() {
   const [columnsCount, setColumnsCount] = useState<number>(3);
   const [currentView, setCurrentView] = useState<"photos" | "bookmarks" | "feeds" | "wantlist" | "chats">("photos");
 
+  // Photos
+  const [photos, setPhotos] = useState<Photo[]>([]);
+  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
+
+  useEffect(() => {
+    fetch("/photos.json")
+      .then((response) => response.json())
+      .then((data) => { setPhotos(data.photos) })
+      // only in case that path is wrong or file is missing
+      .catch((err) => { console.error("Error fetching photos:", err) });
+  }, []);
+
   const renderCurrentView = () => {
     if (currentView === "photos") {
       return (
-        <PhotoGrid
-          photos={photos}
-          columns={columnsCount}
-        />
+        <>
+          <PhotoGrid
+            photos={photos}
+            columns={columnsCount}
+            onPhotoClick={setSelectedPhoto}
+          />
+          {selectedPhoto && (
+            <PhotoDetail photo={selectedPhoto} onClose={() => setSelectedPhoto(null)} />
+          )}
+        </>
       )
     }
     switch (currentView) {
@@ -65,17 +85,6 @@ function App() {
         return null
     }
   }
-
-  // Photos
-  const [photos, setPhotos] = useState<Photo[]>([]);
-
-  useEffect(() => {
-    fetch("/photos.json")
-      .then((response) => response.json())
-      .then((data) => { setPhotos(data.photos) })
-      // only in case that path is wrong or file is missing
-      .catch((err) => { console.error("Error fetching photos:", err) });
-  }, []);
 
   return (
     <div className={`app ${isDarkMode ? "dark-mode" : ""}`}>
@@ -124,7 +133,7 @@ function App() {
                 value={columnsCount}
                 onChange={(e) => setColumnsCount(Number.parseInt(e.target.value))}
                 className="columns-slider"
-                aria-label="Adjust number of columns"
+              // aria-label="Adjust number of columns"
               />
               <span className="grid-icon">+</span>
             </div>
@@ -134,10 +143,10 @@ function App() {
         <div className="theme-controls">
           <button
             className="theme-toggle"
-            aria-label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
+            // aria-label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
             onClick={toggleDarkMode}
           >
-            {isDarkMode ? "🌙" : "☀️"}
+            {isDarkMode ? <FaMoon size="0.8em" /> : <FaSun />}
           </button>
         </div>
       </header>
