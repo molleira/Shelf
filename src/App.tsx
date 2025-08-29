@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import { PhotoGrid } from "./components/photo-grid";
-import { PhotoDetail } from "./components/photo-detail";
 import { Bookmarks } from "./components/bookmark";
 // import { Feeds } from "./components/feeds";
 import { Wantlist } from "./components/wantlist";
 // import { Chats } from "./components/chats";
-import { PasswordPrompt } from "./components/password-prompt";
 import type { Photo } from "./types";
 import "./css/app.css";
 
@@ -50,9 +48,7 @@ function App() {
       return (
         <PhotoGrid
           photos={photos}
-          onPhotoClick={handlePhotoClick}
           columns={columnsCount}
-          isAuthenticated={isAuthenticated}
         />
       )
     }
@@ -80,35 +76,6 @@ function App() {
       // only in case that path is wrong or file is missing
       .catch((err) => { console.error("Error fetching photos:", err) });
   }, []);
-
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-  const [showPasswordPrompt, setShowPasswordPrompt] = useState<boolean>(false);
-  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
-
-  const handlePhotoClick = (photo: Photo) => {
-    if (photo.protected && !isAuthenticated) {
-      setShowPasswordPrompt(true);
-      setSelectedPhoto(photo);
-    } else {
-      setSelectedPhoto(photo);
-    };
-  };
-
-  const PASSWORD = "portfolio2024";
-
-  const handlePasswordSubmit = (password: string) => {
-    if (password === PASSWORD) {
-      setIsAuthenticated(true)
-      setShowPasswordPrompt(false)
-    } else {
-      alert("Incorrect password")
-    }
-  }
-
-  const closeOverlay = () => {
-    setShowPasswordPrompt(false);
-    setSelectedPhoto(null);
-  };
 
   return (
     <div className={`app ${isDarkMode ? "dark-mode" : ""}`}>
@@ -176,9 +143,6 @@ function App() {
       </header>
 
       <main>{renderCurrentView()}</main>
-
-      {selectedPhoto && !showPasswordPrompt && <PhotoDetail photo={selectedPhoto} onClose={closeOverlay} />}
-      {showPasswordPrompt && <PasswordPrompt onSubmit={handlePasswordSubmit} onClose={closeOverlay} />}
     </div>
   )
 }
