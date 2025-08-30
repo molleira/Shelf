@@ -49,12 +49,29 @@ function App() {
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
 
+  // useEffect(() => {
+  //   fetch("/photos.json")
+  //     .then((response) => response.json())
+  //     .then((data) => { setPhotos(data.photos) })
+  //     // only in case that path is wrong or file is missing
+  //     .catch((err) => { console.error("Error fetching photos:", err) });
+  // }, []);
+
   useEffect(() => {
-    fetch("/photos.json")
-      .then((response) => response.json())
-      .then((data) => { setPhotos(data.photos) })
-      // only in case that path is wrong or file is missing
-      .catch((err) => { console.error("Error fetching photos:", err) });
+    const fetchPhotos = async () => {
+      try {
+        const response = await fetch("https://pkzsg07jof.execute-api.eu-central-1.amazonaws.com/dev");
+        if (!response.ok) {
+          throw new Error(`Failed to fetch photos: ${response.statusText}`);
+        }
+        const data = await response.json();
+        setPhotos(data.photos);
+      } catch (err) {
+        console.error("Error fetching photos from AWS API:", err);
+      }
+    };
+
+    fetchPhotos();
   }, []);
 
   const renderCurrentView = () => {
