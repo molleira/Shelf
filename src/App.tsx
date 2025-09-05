@@ -65,7 +65,8 @@ function App() {
           throw new Error(`Failed to fetch photos: ${response.statusText}`);
         }
         const data = await response.json();
-        setPhotos(data.photos);
+        const sortedPhotos = data.photos.sort((a: Photo, b: Photo) => a.id - b.id);
+        setPhotos(sortedPhotos);
       } catch (err) {
         console.error("Error fetching photos from AWS API:", err);
       }
