@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import type { Bookmark } from "../types";
-import "../css/bookmark.css";
+import "./bookmark.css";
 
 export const Bookmarks = () => {
   const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
