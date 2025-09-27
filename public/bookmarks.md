@@ -1,6 +1,5 @@
 # Watching
 
-- [YouTube - Moritz Klein](https://www.youtube.com/playlist?list=PLHeL0JWdJLvRv-r0TTjWxegtBha0ajdYh) - For Beginners Playlist
 - [Dyski](https://dyski.co/) - Residency sessions
 - [3cat](https://www.3cat.cat/3cat/entre-quatre-parets/) - Entre quatre parets
 - [IMDB](https://www.imdb.com/es/title/tt23845296/) - After the party
@@ -24,6 +23,7 @@
 
 - [AI Synthesis](https://aisynthesis.com/diy-electronics-tools-you-need/) - Tools to Build an Analog Synthesizer
 - [Look Mum No Computer](https://www.lookmumnocomputer.com/projects/#/simplest-oscillator) - Super Simple Oscillator
+- [YouTube - Moritz Klein](https://www.youtube.com/playlist?list=PLHeL0JWdJLvRv-r0TTjWxegtBha0ajdYh) - For Beginners Playlist
 
 # Altres
 
