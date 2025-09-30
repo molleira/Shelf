@@ -1,5 +1,7 @@
-# Watching
+# WIP
 
+- [DinSync](https://shop.re-303.com/product/nc-v8-acoustic-lathe-batch-1/) - DinSync NC-V8
+- [Vinylograph](https://www.vinylograph.com/) - 7" Lathe Cut
 - [Dyski](https://dyski.co/) - Residency sessions
 - [3cat](https://www.3cat.cat/3cat/entre-quatre-parets/) - Entre quatre parets
 - [IMDB](https://www.imdb.com/es/title/tt23845296/) - After the party
