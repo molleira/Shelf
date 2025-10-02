@@ -6,7 +6,7 @@ import "./main.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter basename="/Shelf">
+    <BrowserRouter basename="/shelf">
       <App />
     </BrowserRouter>
   </StrictMode>

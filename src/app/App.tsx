@@ -20,25 +20,23 @@ function App() {
         <nav className="nav">
           <Link
             to="/bookmarks"
-            className={`nav-item ${location.pathname === "/bookmarks" ? "active" : ""}`}
+            className={`nav-item ${location.pathname === "/" ? "active" : ""}`}
           >
             Bookmarks
           </Link>
           <Link
             to="/feeds"
-            className={`nav-item ${location.pathname === "/feeds" ? "active" : ""}`}
+            className={`nav-item ${
+              location.pathname === "/feeds" ? "active" : ""
+            }`}
           >
             Feeds
           </Link>
         </nav>
 
         <div>
-          <button
-            className="theme-toggle"
-            onClick={toggleDarkMode}
-          >
+          <button className="theme-toggle" onClick={toggleDarkMode}>
             {isDarkMode ? <FaMoon size="0.8em" /> : <FaSun />}
-
           </button>
         </div>
       </header>

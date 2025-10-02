@@ -6,7 +6,7 @@ export const BookmarkPage = () => {
   const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
 
   useEffect(() => {
-    fetch("/bookmarks.md").then((response) =>
+    fetch("./bookmarks.md").then((response) =>
       response
         .text()
         .then((markdown) => setBookmarks(parseMarkdownBookmarks(markdown)))
