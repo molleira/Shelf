@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import type { Bookmark } from "../types";
 import "./bookmark.css";
 
-export const Bookmarks = () => {
+export const BookmarkPage = () => {
   const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
 
   useEffect(() => {
@@ -65,15 +65,14 @@ export const Bookmarks = () => {
                 className="bookmark-item"
               >
                 <div>
-                  {" "}
-                  <h4 className="bookmark-title">{bookmark.title}</h4>{" "}
-                  <span className="bookmark-url">
-                    {new URL(bookmark.url).hostname.replace(/^www\./, "")}
-                  </span>
+                  <h4 className="bookmark-title">
+                    {bookmark.title}
+                    <span className="bookmark-url">
+                      {new URL(bookmark.url).hostname.replace(/^www\./, "")}
+                    </span>
+                  </h4>
                 </div>
-                {bookmark.description && (
-                  <p className="bookmark-description">{bookmark.description}</p>
-                )}
+                <p className="bookmark-description">{bookmark.description}</p>
               </a>
             ))}
           </div>
