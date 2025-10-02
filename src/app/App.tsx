@@ -1,197 +1,55 @@
 import { useState, useEffect } from "react";
+import { Routes, Route, Link, useLocation } from "react-router-dom";
 import { FaSun, FaMoon } from "react-icons/fa";
-import { PhotoGrid } from "../components/photo-grid";
-import { Bookmarks } from "../bookmark/bookmark";
-// import { Feeds } from "./components/feeds";
-import { Wantlist } from "../components/wantlist";
-// import { Chats } from "./components/chats";
-import { PhotoDetail } from "../components/photo-detail";
-import type { Photo } from "../types";
+import { BookmarkPage } from "../bookmark/bookmark";
+// import { FeedPage } from "../feed/feed";
 import "./app.css";
 
 function App() {
-  // Dark mode
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    const stored = localStorage.getItem("darkMode");
-    if (stored !== null) return stored === "true";
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  });
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+  const location = useLocation();
 
   useEffect(() => {
-    localStorage.setItem("darkMode", String(isDarkMode));
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark-mode");
-    } else {
-      document.documentElement.classList.remove("dark-mode");
-    }
+    document.documentElement.classList.toggle("dark-mode", isDarkMode);
   }, [isDarkMode]);
 
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-color-scheme: dark)");
-    const handler = (e: MediaQueryListEvent) => {
-      if (localStorage.getItem("darkMode") === null) {
-        setIsDarkMode(e.matches);
-      }
-    };
-    media.addEventListener("change", handler);
-    return () => media.removeEventListener("change", handler);
-  }, []);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode((prev) => !prev);
-  };
-
-  // Columns and current view
-  // const [columnsCount, setColumnsCount] = useState<number>(3);
-  const [currentView, setCurrentView] = useState<
-    "photos" | "bookmarks" | "feeds" | "wantlist" | "chats"
-  >("bookmarks");
-
-  // Photos
-  const [photos, setPhotos] = useState<Photo[]>([]);
-  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
-
-  // useEffect(() => {
-  //   fetch("/photos.json")
-  //     .then((response) => response.json())
-  //     .then((data) => { setPhotos(data.photos) })
-  //     // only in case that path is wrong or file is missing
-  //     .catch((err) => { console.error("Error fetching photos:", err) });
-  // }, []);
-
-  useEffect(() => {
-    const fetchPhotos = async () => {
-      try {
-        const response = await fetch(
-          "https://pkzsg07jof.execute-api.eu-central-1.amazonaws.com/dev"
-        );
-        if (!response.ok) {
-          throw new Error(`Failed to fetch photos: ${response.statusText}`);
-        }
-        const data = await response.json();
-        const sortedPhotos = data.photos.sort(
-          (a: Photo, b: Photo) => a.id - b.id
-        );
-        setPhotos(sortedPhotos);
-      } catch (err) {
-        console.error("Error fetching photos from AWS API:", err);
-      }
-    };
-
-    fetchPhotos();
-  }, []);
-
-  const renderCurrentView = () => {
-    if (currentView === "photos") {
-      return (
-        <>
-          <PhotoGrid
-            photos={photos}
-            // columns={columnsCount}
-            columns={3}
-            onPhotoClick={setSelectedPhoto}
-          />
-          {selectedPhoto && (
-            <PhotoDetail
-              photo={selectedPhoto}
-              onClose={() => setSelectedPhoto(null)}
-            />
-          )}
-        </>
-      );
-    }
-    switch (currentView) {
-      case "bookmarks":
-        return <Bookmarks />;
-      // case "feeds":
-      //   return <Feeds />
-      case "wantlist":
-        return (
-          <Wantlist
-            // columns={columnsCount}
-            columns={3}
-          />
-        );
-      // case "chats":
-      //   return <Chats />
-      default:
-        return null;
-    }
-  };
-
   return (
-    <div className={"container"}>
+    <div className="container">
       <header>
         <nav className="nav">
-          <button
-            className={`nav-button ${currentView === "photos" ? "active" : ""}`}
-            onClick={() => setCurrentView("photos")}
-          >
-            Photos
-          </button>
-          <button
-            className={`nav-button ${
-              currentView === "bookmarks" ? "active" : ""
-            }`}
-            onClick={() => setCurrentView("bookmarks")}
+          <Link
+            to="/bookmarks"
+            className={`nav-item ${location.pathname === "/bookmarks" ? "active" : ""}`}
           >
             Bookmarks
-          </button>
-          {/* <button
-            className={`nav-button ${currentView === "feeds" ? "active" : ""}`}
-            onClick={() => setCurrentView("feeds")}
+          </Link>
+          <Link
+            to="/feeds"
+            className={`nav-item ${location.pathname === "/feeds" ? "active" : ""}`}
           >
             Feeds
-          </button> */}
-          <button
-            className={`nav-button ${
-              currentView === "wantlist" ? "active" : ""
-            }`}
-            onClick={() => setCurrentView("wantlist")}
-          >
-            Wantlist
-          </button>
-          {/* <button
-            className={`nav-button ${currentView === "chats" ? "active" : ""}`}
-            onClick={() => setCurrentView("chats")}
-          >
-            Chats
-          </button> */}
+          </Link>
         </nav>
 
-        {/* <div className="controls-group">
-          {(currentView === "photos" || currentView === "wantlist") && (
-            <div className="grid-controls">
-              <span className="grid-icon">−</span>
-              <input
-                type="range"
-                min="2"
-                max="6"
-                value={columnsCount}
-                onChange={(e) =>
-                  setColumnsCount(Number.parseInt(e.target.value))
-                }
-                className="columns-slider"
-                // aria-label="Adjust number of columns"
-              />
-              <span className="grid-icon">+</span>
-            </div>
-          )}
-        </div> */}
-
-        {/* <div className="theme-controls"> */}
         <div>
           <button
-            className="theme-button"
-            // aria-label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
+            className="theme-toggle"
             onClick={toggleDarkMode}
           >
             {isDarkMode ? <FaMoon size="0.8em" /> : <FaSun />}
+
           </button>
         </div>
       </header>
 
-      <main>{renderCurrentView()}</main>
+      <main>
+        <Routes>
+          <Route path="/" element={<BookmarkPage />} />
+          <Route path="/bookmarks" element={<BookmarkPage />} />
+          <Route path="/feeds" element={<div>Feeds coming soon...</div>} />
+        </Routes>
+      </main>
     </div>
   );
 }
