@@ -1,5 +1,12 @@
 # WIP
 
+- [Blod](https://discreetmusicgbg.bandcamp.com/album/den-o-ndliga-historien) - Blod
+- [Plainhead](https://plainhead.bandcamp.com/album/you-are-more-than-a-thousand-words-2) - Plainhead
+- [Clay Kin](https://claykin.bandcamp.com/album/vevey) - Clay Kin
+- [Simpn Popp](https://simonpopp.bandcamp.com/album/trio) - Simon Popp
+- [GitHub Stars](https://github.com/molleira?tab=stars) - GitHub Stars
+- [Udemy](https://www.udemy.com/course/modern-javascript-from-novice-to-ninja/) - Udemy
+- [MCP](https://modelcontextprotocol.io/docs/getting-started/intro) - Model Context Protocol
 - [DinSync](https://shop.re-303.com/product/nc-v8-acoustic-lathe-batch-1/) - DinSync NC-V8
 - [Vinylograph](https://www.vinylograph.com/) - 7" Lathe Cut
 - [Dyski](https://dyski.co/) - Residency sessions
@@ -30,3 +37,9 @@
 # Altres
 
 - [Devon Analogue](https://devonanalogue.com) - Studio retreat
+- [YouTube - Neurogal MD](https://www.youtube.com/watch?v=Om3zB35xxTo) - About binaural beats
+
+# Dev
+
+- [Addy Osmani](https://addyo.substack.com/p/mcp-what-it-is-and-why-it-matters) - About MCP servers
+- [YouTube - Web Dev Simplified](https://www.youtube.com/watch?v=ZoZxQwp1PiM) - MCP Crash Course
