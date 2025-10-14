@@ -7,6 +7,7 @@
 - [Lines](https://llllllll.co/t/how-do-i-produce-and-self-release-music-on-cassette/8446/218) - DIY Cassette and music thread
 - [CDM](https://cdm.link/in-1975-bbc-spelled-out-how-muzak-and-musical-power-worked-maybe/) - BBC reel-to-reel doc
 - [YouTube](https://www.youtube.com/watch?v=QYM3TWf_G38) - Audacity redesign
+- [ChatGPT](https://chatgpt.com/) - ChatGPT
 - [GitHub](https://github.com/molleira?tab=repositories) - Repos
 - [GitHub](https://github.com/molleira/soundmap) - Soundmap
 - [GitHub](https://github.com/molleira/music-radio) - Music Radio
