@@ -1,7 +1,28 @@
 # WIP
 
-- [3cat](https://www.3cat.cat/3cat/entre-quatre-parets/) - Entre quatre parets
-- [IMDB](https://www.imdb.com/es/title/tt23845296/) - After the party
+- [La Base](https://www.youtube.com/watch?v=yBp2CRYW8oU) - La Base
+- [Music Thing](https://www.musicthing.co.uk/) - Music Thing
+- [YouTube - mylarmelodies](https://www.youtube.com/watch?v=ABbWmZOtmig) - Workshop System
+- [YouTube - mylarmelodies](https://www.youtube.com/watch?v=pkfzprPPTHE) - Panda Shall Fly
+- [Lines](https://llllllll.co/t/how-do-i-produce-and-self-release-music-on-cassette/8446/218) - DIY Cassette and music thread
+- [CDM](https://cdm.link/in-1975-bbc-spelled-out-how-muzak-and-musical-power-worked-maybe/) - BBC reel-to-reel doc
+- [YouTube](https://www.youtube.com/watch?v=QYM3TWf_G38) - Audacity redesign
+- [GitHub](https://github.com/molleira?tab=repositories) - Repos
+- [GitHub](https://github.com/molleira/soundmap) - Soundmap
+- [GitHub](https://github.com/molleira/music-radio) - Music Radio
+- [GitHub](https://github.com/cameronDz/rss-feed-medium-app) - RSS Feed App
+- [CREM](https://archives.crem-cnrs.fr/) - CREM Archives
+- [Laws of UX](https://lawsofux.com/) - Laws of UX
+- [Coursera](https://www.coursera.org/learn/aws-amazon-cloudwatch-getting-started) - CloudWatch
+- [Udemy](https://www.udemy.com/course/modern-javascript-from-novice-to-ninja/?couponCode=KEEPLEARNING) - JS Ninja
+- [Gearnews](https://www.gearnews.com/how-to-press-your-own-record-vinyl-for-1/) - Press own vinyl
+- [Vinilificio](https://app.vinilificio.com/login) - Vinilificio
+- [Duophonic](https://shop.duophonic.de/produkte/10inch/) - Duophonic
+- [Vinylwerk](https://www.berlinervinylwerk.de/store/vinyl-dubplate-180g-10-inches/) - Berliner Vinylwerk
+- [Vinylograph](https://www.vinylograph.com/product/order-your-7-inch/) - Vinylograph
+- [Discogs](https://www.discogs.com/es/sell/list?master_id=123916&format=Vinyl&ships_from=Germany) - Kings of Leon
+- [Discogs](https://www.discogs.com/es/sell/list?sort=price%2Casc&limit=25&master_id=3799665) - Jodie Faster
+- [Discogs](https://www.discogs.com/es/sell/list?sort=price%2Casc&limit=25&master_id=462229&format=Vinyl) - Shiner
 
 # Eurorack
 
@@ -10,7 +31,6 @@
 # Portastudio
 
 - [YouTube - Jean-François Noel](https://www.youtube.com/watch?v=MDGQQqCqwQg) - Tascam 414 pitch mod / normal speed
-- [YouTube - Oora](https://www.youtube.com/watch?v=3uT4gs_AJmQ) - Cassette Techniques with Tascam Portastudio 414
 - [YouTube - BlankFor_ms](https://www.youtube.com/watch?v=vchbZglzmyw) - Tape Loops + Pedals
 
 # DIY Cassette
