@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { BookmarkPage } from "../bookmark/bookmark";
-// import { FeedPage } from "../feed/feed";
+import { FeedPage } from "../feed/feed";
 import "./app.css";
 
 function App() {
@@ -45,7 +45,7 @@ function App() {
         <Routes>
           <Route path="/" element={<BookmarkPage />} />
           <Route path="/bookmarks" element={<BookmarkPage />} />
-          <Route path="/feeds" element={<div>Feeds coming soon...</div>} />
+          <Route path="/feeds" element={<FeedPage />} />
         </Routes>
       </main>
     </div>

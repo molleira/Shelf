@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import type { Bookmark } from "../types";
+import { parseMarkdownItems, groupItemsByCategory } from "../helpers/markdown";
 import "./bookmark.css";
 
 export const BookmarkPage = () => {
@@ -9,46 +10,11 @@ export const BookmarkPage = () => {
     fetch("./bookmarks.md").then((response) =>
       response
         .text()
-        .then((markdown) => setBookmarks(parseMarkdownBookmarks(markdown)))
+        .then((markdown) => setBookmarks(parseMarkdownItems(markdown)))
     );
   }, []);
 
-  const parseMarkdownBookmarks = (markdown: string): Bookmark[] => {
-    const bookmarks: Bookmark[] = [];
-    let currentCategory = "Other";
-
-    markdown
-      .split("\n")
-      .map((line) => line.trim())
-      .forEach((line) => {
-        if (line.startsWith("#")) {
-          currentCategory = line.replace(/^#+\s*/, "");
-        } else if (line.startsWith("- [")) {
-          const match = line.match(/\[([^\]]+)\]\(([^)]+)\)(?:\s*-\s*(.+))?/);
-          if (match) {
-            const [, title, url, description] = match;
-            bookmarks.push({
-              title: title.trim(),
-              url: url.trim(),
-              description: description?.trim() || "",
-              category: currentCategory,
-            });
-          }
-        }
-      });
-
-    return bookmarks;
-  };
-
-  const groupBookmarksByCategory = (bookmarks: Bookmark[]) => {
-    return bookmarks.reduce((acc, bookmark) => {
-      const category = bookmark.category || "Other";
-      acc[category] ??= [];
-      acc[category].push(bookmark);
-      return acc;
-    }, {} as Record<string, Bookmark[]>);
-  };
-  const groupedBookmarks = groupBookmarksByCategory(bookmarks);
+  const groupedBookmarks = groupItemsByCategory(bookmarks);
 
   return (
     <div>
