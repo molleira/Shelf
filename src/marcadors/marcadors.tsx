@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import type { Bookmark } from "../types";
-import { parseMarkdownItems, groupItemsByCategory } from "../helpers/markdown";
-import "./bookmark.css";
+import type { Marcador } from "../types/types";
+import { parseMarkdownItems, groupItemsByCategory } from "../utilitats/markdown";
+import "./marcadors.css";
 
-export const BookmarkPage = () => {
-  const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
+export const Marcadors = () => {
+  const [bookmarks, setBookmarks] = useState<Marcador[]>([]);
 
   useEffect(() => {
-    fetch("./bookmarks.md").then((response) =>
+    fetch("./marcadors.md").then((response) =>
       response
         .text()
         .then((markdown) => setBookmarks(parseMarkdownItems(markdown)))

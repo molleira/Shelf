@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
-import type { Feed } from "../types";
-import { parseMarkdownItems, groupItemsByCategory } from "../helpers/markdown";
-import "./feed.css";
+import type { Canal } from "../types/types";
+import { parseMarkdownItems, groupItemsByCategory } from "../utilitats/markdown";
+import "./canals.css";
 
-export const FeedPage = () => {
-  const [feeds, setFeeds] = useState<Feed[]>([]);
+export const Canals = () => {
+  const [feeds, setFeeds] = useState<Canal[]>([]);
 
   useEffect(() => {
-    fetch("./feeds.md").then((response) =>
+    fetch("./canals.md").then((response) =>
       response
         .text()
         .then((markdown) => setFeeds(parseMarkdownItems(markdown)))
