@@ -1,5 +1,11 @@
 # WIP
 
+- [Innovation](https://innovation-sofas.com/) - Innovation Sofas
+- [Lines](https://llllllll.co/) - Lines Forum
+- [Strudel](https://strudel.cc/workshop/first-notes/) - Strudel
+- [EMB](https://www.gov.br/mre/pt-br/embaixada-berlim/consular/anexos/checklist/checklist-procuracao.pdf) - Procuração
+- [EMB](https://www.gov.br/mre/pt-br/embaixada-berlim/consular/paginas/custos) - Custos
+- [DEU](https://service.berlin.de/dienstleistung/318998/) - Einbürgerng
 - [La Base](https://www.youtube.com/watch?v=yBp2CRYW8oU) - La Base
 - [Music Thing](https://www.musicthing.co.uk/) - Music Thing
 - [YouTube - mylarmelodies](https://www.youtube.com/watch?v=ABbWmZOtmig) - Workshop System
@@ -24,6 +30,19 @@
 - [Discogs](https://www.discogs.com/es/sell/list?master_id=123916&format=Vinyl&ships_from=Germany) - Kings of Leon
 - [Discogs](https://www.discogs.com/es/sell/list?sort=price%2Casc&limit=25&master_id=3799665) - Jodie Faster
 - [Discogs](https://www.discogs.com/es/sell/list?sort=price%2Casc&limit=25&master_id=462229&format=Vinyl) - Shiner
+- [xHain](https://x-hain.de/en/) - Fshain Hacker Space
+
+# Lines
+
+- [Muzan](https://muzaneditions.bandcamp.com/) - Muzan Editions
+- [Cudighi](https://cudighirecords.bandcamp.com/album/crusted-habits) - Cudighi Records
+- [Deru](https://deru.bandcamp.com/album/rhythm-tapes) - Deru, Rhythm Tapes
+- [UDK](https://zvukoveteleso.bandcamp.com/album/dk-irma) - UDK: Irma
+- [Chester](https://chesterwinowiecki.bandcamp.com/album/safety-precautions-live-performance-of-long-form-improvisation-on-the-ciat-lonbarde-fourses-in-the-zi-hai-with-electronic-and-acoustic-filters) - Chester Wunowiecki
+- [CTT](https://cowtonguetacorecords.bandcamp.com/merch) - Cow Tongue Taco
+- [Noisetrees](https://noisetrees.bandcamp.com/album/ghost-piano-part-2) - Noisetrees, Ghost Piano
+- [griftmarket](https://griftmarket.bandcamp.com/album/pilot) - Griftmarket, Pilot
+- [Hainbach](https://hainbach.bandcamp.com/album/amrum-ost) - Amrum Soundtrack
 
 # Eurorack
 
@@ -33,6 +52,16 @@
 
 - [YouTube - Jean-François Noel](https://www.youtube.com/watch?v=MDGQQqCqwQg) - Tascam 414 pitch mod / normal speed
 - [YouTube - BlankFor_ms](https://www.youtube.com/watch?v=vchbZglzmyw) - Tape Loops + Pedals
+
+# Cassette Production
+
+- [Modemm](https://mmodemm.bandcamp.com/) - Modemm Label
+- [Tapedub](https://www.tapedub.com/#home) - Tapedub Berlin
+- [Shell Tapes](https://www.instagram.com/shell_tapes/) - Shell Tapes
+- [HDT](https://www.headlessduplicatedtapes.com/) - Headless Duplicated Tapes
+- [Edisco](https://www.edisco.pt/cms/view/id/22/) - Edisco Portugal
+- [Vynilplant](https://vinylplant.ee/) - Vynilplant Estonia
+- [Mobineko](https://www.mobineko.com/) - Mobineko Taiwan
 
 # DIY Cassette
 
